@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+
+  beacon_catcher:
+    container_name: beacon_catcher_fpm
+    build:
+      context: ./beacon_catcher_fpm
+      dockerfile: Dockerfile
+    volumes:
+      - ./../app:/var/www/html
+
+  nginx:
+    container_name: beacon_catcher_nginx
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    ports:
+      - 80:80
+    volumes:
+      - ./../app:/var/www/html

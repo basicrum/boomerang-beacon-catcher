@@ -1,0 +1,12 @@
+<?php
+/**
+ * Put your DB credentials here
+ */
+
+return [
+    'host'     => '',
+    'username' => '',
+    'password' => '',
+    'database' => '',
+    'port'     => '',
+];
