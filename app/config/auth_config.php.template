@@ -1,0 +1,10 @@
+<?php
+/**
+ * Put your basic HTTP AUTH credentials here
+ */
+
+return [
+    'enabled'  => true,
+    'username' => '',
+    'password' => ''
+];
