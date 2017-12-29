@@ -1,7 +1,7 @@
 <?php
-include __DIR__ . "/../utility/cross_origin.php";
+include __DIR__ . "/../../utility/cross_origin.php";
 
-$dbConfigFileName = __DIR__ . "/../config/db_config.php";
+$dbConfigFileName = __DIR__ . "/../../config/db_config.php";
 
 if (false === file_exists($dbConfigFileName)) {
     header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error', true, 500);
