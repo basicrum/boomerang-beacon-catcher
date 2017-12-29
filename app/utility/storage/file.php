@@ -6,7 +6,7 @@ class Catcher_Utility_Storage_File
 
     public function __construct()
     {
-        
+
     }
 
     /**
@@ -37,6 +37,15 @@ class Catcher_Utility_Storage_File
             $time = end(explode('-', $fileName));
             $timestamp =  date('Y-m-d G:i:s', $time);
 
+            /**
+             * Mimicking same structure that we get from MySql.
+             *
+             * We depend on internal container time for 'created_at'
+             *
+             * Also we don't have a real 'id' but for now I just
+             * use beacon filename as 'id'.
+             *
+             */
             $beacons[] = [
                 'id'          => $fileName,
                 'beacon_data' => file_get_contents($this->storageDirectory . '/' . $fileName),
