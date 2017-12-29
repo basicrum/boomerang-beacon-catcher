@@ -9,6 +9,13 @@ if (false === file_exists($dbConfigFileName)) {
     return;
 }
 
+/**
+ * We use this in order to return 200 to the user as soon as possible.
+ *
+ * So far we will use this solution instead of doing with webserver approach
+ */
+fastcgi_finish_request();
+
 // Depending on the size of beacon data Boomerang may send GET or POST
 $beacon = !empty($_GET) ? $_GET : $_POST;
 
@@ -24,7 +31,6 @@ if (!empty($beacon)) {
 
     $mysqli->query($query);
 
-    echo $mysqli->error;
     return;
 }
 
