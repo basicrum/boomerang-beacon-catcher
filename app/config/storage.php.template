@@ -1,0 +1,12 @@
+<?php
+/**
+ * Put your preferred storage type here.
+ *
+ * Currently you can choose between:
+ * - file
+ * - mysql
+ */
+
+return [
+    'engine' => 'file'
+];

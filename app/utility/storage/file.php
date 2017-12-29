@@ -1,13 +1,11 @@
 <?php
+require_once __DIR__ . '/interface.php';
+
 class Catcher_Utility_Storage_File
+    implements Catcher_Utility_Storage_Interface
 {
 
-    private $storageDirectory = '/tmp';
-
-    public function __construct()
-    {
-
-    }
+    private $storageDirectory = '/var/tmp';
 
     /**
      * @param string $beacon
@@ -72,7 +70,7 @@ class Catcher_Utility_Storage_File
     /**
      * @param array $files
      */
-    protected function deleteFiles(array $files)
+    private function deleteFiles(array $files)
     {
         foreach ($files as $fileName) {
             unlink($this->storageDirectory . '/' . $fileName);

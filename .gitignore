@@ -1,3 +1,4 @@
 .idea
 app/config/db_config.php
 app/config/auth_config.php
+app/config/storage.php
