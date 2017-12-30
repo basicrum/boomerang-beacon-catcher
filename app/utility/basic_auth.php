@@ -1,10 +1,9 @@
 <?php
 $authConfigFileName = __DIR__ . "/../config/auth_config.php";
 
+// We want to leave the security hole open in order to have an easy start.
 if (false === file_exists($authConfigFileName)) {
-    header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error', true, 500);
-    echo "Your Basic Auth configuration file: <strong style='color: red'>app/config/auth_config.php</strong> is missing! You can create it from <strong style='color: green'>app/config/auth_config.php.template</strong>";
-    die();
+    return;
 }
 
 

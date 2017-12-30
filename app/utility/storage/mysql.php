@@ -47,7 +47,7 @@ class Catcher_Utility_Storage_Mysql
      */
     public function fetchBeacons()
     {
-        $query = "SELECT * FROM `beacons` limit";
+        $query = "SELECT * FROM `beacons`";
 
         $res = $this->_mysqli->query($query);
         $beacons = $res->fetch_all(MYSQLI_ASSOC);
