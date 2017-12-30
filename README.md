@@ -2,6 +2,8 @@
 
 PHP application that enables Web Performance Optimization researchers and enthusiasts to collect beacon data collected from visitors browsers to a **temporary storage**. The application allows you to store the beacon data in RAW format. Later is possible to move the data to another location where operations like reading, decoding and reporting could be executed.
 
+Originally disigned to store beacon data from Boomerang JS: https://github.com/SOASTA/boomerang
+
 Boomerang Beacon Catcher is really nothing more than a **temporary storage** for beacon data! My initial idea of creating it was that I wanted to deploy it at some cheap hosting location and start collecting beacon data very quickly. Basically this allowed me to separate collecting beacon data from reading and decoding it.
 
 # How to use:
