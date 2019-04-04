@@ -64,7 +64,10 @@ class Catcher_Utility_Storage_File
      */
     private function generateFileName($beacon)
     {
-        return $this->storageDirectory . '/' . md5($beacon) . '-' . mktime();
+        $origin = !empty($_SERVER['HTTP_ORIGIN']) ? $_SERVER['HTTP_ORIGIN'] : 'unknown';
+        $parsed = parse_url($origin);
+        $suffix = str_replace('.', '_', $parsed['host']);
+        return $this->storageDirectory . '/' . $suffix . '_' . md5($beacon) . '-' . mktime();
     }
 
     /**
