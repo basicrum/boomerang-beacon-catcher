@@ -15,6 +15,7 @@ fastcgi_finish_request();
 $beacon = !empty($_GET) ? $_GET : $_POST;
 
 if (!empty($beacon)) {
+    $beacon['user_agent'] = !empty($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : '';
     $beaconJson = json_encode($beacon);
 
     $storage->storeBeacon($beaconJson);
