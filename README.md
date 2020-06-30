@@ -64,7 +64,7 @@ curl --compressed username:password@www.example.com/excavator/digger.php
 I also added basic NGINX and PHP-FPM containers that may speed up the setup for people familiar with docker. I am not sure how much time Docker could save because the basic setup of the application doesn't require many services or some complex setup but you can give it a try if you are familiar with Docker.
 
 There are 2 things that you need to take care of:
- * Use Docker Compose version 3
- * In **docker/nginx/nginx.conf** you may change `server_name  beacon-catcher.loc;` to your own domain name.
+ * Use Docker Compose version 3.
+ * In **docker/nginx/nginx.conf** you may change `server_name ~.*;` to your own domain name e.g. `server_name  www.my-beacon-catcher.com;`.
 
 You could check out what we have in: **docker/docker-compose.yaml**
