@@ -1,6 +1,7 @@
-FROM nginx:alpine
+FROM nginx:1.16.0-alpine
 
 RUN apk add --update bash \
     && rm -rf /var/cache/apk/*
 
-COPY *.conf /etc/nginx/conf.d/
+COPY ./docker/nginx/*.conf /etc/nginx/conf.d/
+COPY ./app/public /usr/src/app

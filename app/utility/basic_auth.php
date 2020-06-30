@@ -1,24 +1,17 @@
 <?php
-$authConfigFileName = __DIR__ . "/../config/auth_config.php";
+$enabled = getenv('BASIC_AUTH_ENABLED', true);
 
-// We want to leave the security hole open in order to have an easy start.
-if (false === file_exists($authConfigFileName)) {
+if ('yes' !== $enabled) {
     return;
 }
 
-
-$credentialsConfig = include $authConfigFileName;
-
-
-
-if (true !== $credentialsConfig['enabled']) {
-    return;
-}
+$confUsername = getenv('BASIC_AUTH_USERNAME', true);
+$confPassword = getenv('BASIC_AUTH_PASSWORD', true);
 
 $user = $_SERVER['PHP_AUTH_USER'];
 $pass = $_SERVER['PHP_AUTH_PW'];
 
-$validated = ($user == $credentialsConfig['username']) && ($pass == $credentialsConfig['password']);
+$validated = ($user == $confUsername) && ($pass == $confPassword);
 
 if (!$validated) {
     header('WWW-Authenticate: Basic realm="Boomerang Beacon Catcher"');
