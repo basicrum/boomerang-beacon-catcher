@@ -8,10 +8,6 @@ services:
       context: ./..
       dockerfile: ./docker/beacon_catcher_fpm/Dockerfile
     image: beacon_catcher_fpm:0.0.2
-    environment:
-      - BASIC_AUTH_ENABLED=yes
-      - BASIC_AUTH_USERNAME=brum
-      - BASIC_AUTH_PASSWORD=83y3tV64VZR97dHM
     volumes:
       - ./../app:/usr/src/app
       - ./../beacons:/var/tmp/beacons
