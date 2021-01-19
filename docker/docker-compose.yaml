@@ -12,6 +12,7 @@ services:
       - ./../app:/usr/src/app
       - ./../beacons:/var/tmp/beacons
     # user: "1000:1000"
+    restart: always
 
   webserver_beacon_catcher:
     container_name: beacon_catcher_nginx
@@ -23,3 +24,4 @@ services:
       - 80:80
     volumes:
       - ./../app/public/:/usr/src/app
+    restart: always
